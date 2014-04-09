@@ -18,9 +18,9 @@ module ZoozPayments
                                     :headers => {
                                         'ZooZ-Unique-ID' => ZoozPayments.unique_id,
                                         'ZooZ-App-Key' => ZoozPayments.app_key,
-                                        'ZooZ-Response-Type' => ZoozPayments.response_type,
+                                        'ZooZ-Response-Type' => ZoozPayments.response_type
                                     })
-      CGI.parse(http_response.body)
+      http_response.body
     end
 
     def verify_transaction(cmd, transaction_id,transaction_display_id,optional_args={})
@@ -32,9 +32,9 @@ module ZoozPayments
                                     :headers => {
                                         'ZooZ-Unique-ID' => ZoozPayments.unique_id,
                                         'ZooZ-App-Key' => ZoozPayments.app_key,
-                                        'ZooZ-Response-Type' => ZoozPayments.response_type,
+                                        'ZooZ-Response-Type' => ZoozPayments.response_type
                                     })
-      CGI.parse(http_response.body)
+      http_response.body
     end
 
     def valid?
